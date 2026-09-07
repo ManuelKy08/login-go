@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KSP Makmur Mandiri - Masuk</title>
+    
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --primary-color: #4f46e5;
+            --secondary-color: #6366f1;
+            --accent-color: #10b981;
+            --muted-color: #6b7280;
+            --border-color: #e5e7eb;
+            --card-bg: #ffffff;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #111827;
+            --text-color: #f9fafb;
+            --primary-color: #a5f3fc;
+            --secondary-color: #818cf8;
+            --accent-color: #34d399;
+            --muted-color: #9ca3af;
+            --border-color: #374151;
+            --card-bg: #1f2937;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+        
+        .container {
+            max-width: 420px;
+            width: 100%;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px 32px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        [data-theme="dark"] .card {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .brand {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .brand span {
+            width: 28px;
+            height: 28px;
+            background: white;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--bg-color);
+        }
+        
+        .title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: var(--muted-color);
+            font-size: 0.875rem;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 24px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text-color);
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+        }
+        
+        .form-input::placeholder {
+            color: var(--muted-color);
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin: 16px 0;
+            font-size: 0.875rem;
+        }
+        
+        .remember-me input {
+            margin-right: 8px;
+            accent-color: var(--primary-color);
+        }
+        
+        .forgot-link {
+            color: var(--primary-color);
+            font-size: 0.875rem;
+            margin-top: 8px;
+            display: block;
+            text-align: right;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border: 2px solid var(--primary-color);
+            margin-top: 8px;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .alert {
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 0.875rem;
+        }
+        
+        .alert-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        
+        .alert-success {
+            background: #d1fae5;
+            color: #059669;
+            border: 1px solid #a3e635;
+        }
+        
+        .footer-text {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--muted-color);
+        }
+        
+        .footer-text a {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="brand">
+            <span>KSP</span>
+        </div>
+        <h1 class="title">Masuk Akun</h1>
+        <p class="subtitle">Login ke dashboard KSP Makmur Mandiri</p>
+        
+        {{ if .Error }}
+        <div class="alert alert-error">{{ .Error }}</div>
+        {{ end }}
+        
+        {{ if .Success }}
+        <div class="alert alert-success">{{ .Success }}</div>
+        {{ end }}
+        
+        <form action="/login" method="POST" class="p-6">
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="Masukkan email Anda" autocomplete="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <div class="position-relative">
+                    <input class="form-input" type="password" id="password" name="password" placeholder="Masukkan password" autocomplete="current-password" required>
+                    <span class="toggle-password" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted-color); cursor: pointer; font-size: 0.875rem;">👁</span>
+                </div>
+            </div>
+            
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <span>Remember me</span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-full">Masuk</button>
+            
+            <a href="#" class="forgot-link">Lupa password?</a>
+            
+            <div class="text-center mt-6">
+                <span>Belum punya akun?</a><a href="/register" class="btn btn-secondary">Daftar</a></span>
+            </div>
+        </form>
+        
+        <div class="footer-text">KSP Makmur Mandiri &copy; 2024</div>
+    </div>
+</body>
+</html>
